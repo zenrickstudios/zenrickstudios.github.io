@@ -1099,11 +1099,11 @@
     <h2 class="section-title">Let's build<br/><em>something.</em></h2>
     <p class="contact-tagline">Got a project, an idea, or just want to chat design? My inbox is always open. I respond within 24 hours.</p>
     <div class="contact-links">
-      <a href="mailto:zenrickstudios@gmail.com" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#6218070c100b0109111617060b0d1122050f030b0e4c010d0f" class="contact-link">
         <div class="cl-icon">✉</div>
         <div>
           <div class="cl-label">Email</div>
-          <div class="cl-value">zenrickstudios@gmail.com</div>
+          <div class="cl-value"><span class="__cf_email__" data-cfemail="215b444f5348424a52555445484e5261464c40484d0f424e4c">[email&#160;protected]</span></div>
         </div>
         <div class="cl-arrow">→</div>
       </a>
@@ -1118,25 +1118,25 @@
     </div>
   </div>
 
-  <div class="contact-form">
+  <form class="contact-form" action="https://formspree.io/f/mjgaykjz" method="POST">
     <div class="form-group">
       <label class="form-label">Your Name</label>
-      <input type="text" class="form-input" placeholder="Jane Smith" />
+      <input type="text" name="name" class="form-input" placeholder="Jane Smith" required />
     </div>
     <div class="form-group">
       <label class="form-label">Email</label>
-      <input type="email" class="form-input" placeholder="jane@company.com" />
+      <input type="email" name="email" class="form-input" placeholder="jane@company.com" required />
     </div>
     <div class="form-group">
       <label class="form-label">Project Type</label>
-      <input type="text" class="form-input" placeholder="UI/UX Design, Branding, etc." />
+      <input type="text" name="project_type" class="form-input" placeholder="UI/UX Design, Branding, etc." />
     </div>
     <div class="form-group">
       <label class="form-label">Message</label>
-      <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+      <textarea name="message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
     </div>
-    <button class="form-submit" onclick="handleSubmit(this)">Send Message ✦</button>
-  </div>
+    <button type="submit" class="form-submit">Send Message ✦</button>
+  </form>
 </section>
 
 <!-- FOOTER -->
@@ -1148,7 +1148,7 @@
   <div class="footer-copy">© 2025 Rick · All rights reserved</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Cursor
   const cur = document.getElementById('cur');
   const ring = document.getElementById('ring');
@@ -1177,15 +1177,4 @@
   function handleSubmit(btn) {
     const orig = btn.textContent;
     btn.textContent = 'Message Sent ✓';
-    btn.style.background = 'var(--surface)';
-    btn.style.color = 'var(--accent)';
-    setTimeout(() => {
-      btn.textContent = orig;
-      btn.style.background = 'var(--accent)';
-      btn.style.color = '#0a0a0a';
-    }, 3000);
-  }
-</script>
-
-</body>
-</html>
+    btn.s
