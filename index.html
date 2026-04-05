@@ -40,7 +40,6 @@
       pointer-events: none;
       z-index: 9999;
       transform: translate(-50%, -50%);
-      mix-blend-mode: difference;
       transition: width 0.3s, height 0.3s;
     }
     .cursor-ring {
@@ -1099,15 +1098,15 @@
     <h2 class="section-title">Let's build<br/><em>something.</em></h2>
     <p class="contact-tagline">Got a project, an idea, or just want to chat design? My inbox is always open. I respond within 24 hours.</p>
     <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#6218070c100b0109111617060b0d1122050f030b0e4c010d0f" class="contact-link">
+      <a href="mailto:zenrickstudios@gmail.com" class="contact-link">
         <div class="cl-icon">✉</div>
         <div>
           <div class="cl-label">Email</div>
-          <div class="cl-value"><span class="__cf_email__" data-cfemail="215b444f5348424a52555445484e5261464c40484d0f424e4c">[email&#160;protected]</span></div>
+          <div class="cl-value">zenrickstudios@gmail.com</div>
         </div>
         <div class="cl-arrow">→</div>
       </a>
-      <a href="https://instagram.com/zenrick_studios" target="_blank" class="contact-link">
+      <a href="https://instagram.com/zenrick_studios" target="_blank" rel="noopener noreferrer" class="contact-link">
         <div class="cl-icon">◎</div>
         <div>
           <div class="cl-label">Instagram</div>
@@ -1148,7 +1147,7 @@
   <div class="footer-copy">© 2025 Rick · All rights reserved</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Cursor
   const cur = document.getElementById('cur');
   const ring = document.getElementById('ring');
@@ -1173,8 +1172,24 @@
     el.addEventListener('mouseleave', () => cur.classList.remove('big'));
   });
 
-  // Form submit
+  // Form submit feedback
   function handleSubmit(btn) {
     const orig = btn.textContent;
     btn.textContent = 'Message Sent ✓';
-    btn.s
+    btn.style.background = '#28c840';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }
+
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      const btn = form.querySelector('.form-submit');
+      if (btn) handleSubmit(btn);
+    });
+  }
+</script>
